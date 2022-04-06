@@ -32,9 +32,10 @@ public class Square extends Rectangle {
             if(!ship.isAlive()) {
                 this.board.ships--;
                 setFill(Color.DARKRED);
-//                for (Square neighbour : board.getNeighbors(x, y)) {
-//                    setFill(Color.BLACK);
-//                }
+
+                for (Square neighbors : this.board.getNeighbors(x, y)) {
+                    neighbors.setFill(Color.BLACK);
+                }
             }
             return true; //we hit the ship
         }
