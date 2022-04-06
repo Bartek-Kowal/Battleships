@@ -1,22 +1,21 @@
 package com.company;
 
 public class Ship {
-    public int type;
-    private int hp;
+    public int type;                    //length of the ship
+    public boolean vertical = true;     //true -> vertical, false -> horizontal
+    private int health;
 
-    public Ship(int type)
-    {
+    public Ship(int type, boolean vertical) {
         this.type = type;
-        this.hp = type;
+        this.vertical = vertical;
+        this.health = type;             //health is equal to the type, eg: 5hp = 5-masted-ship
     }
 
-    public void gettingHit()
-    {
-        hp--;
+    public void hit() {
+        health--;
     }
 
-    public boolean isAlive()
-    {
-        return hp > 0;
+    public boolean isAlive() {
+        return health > 0;
     }
 }
